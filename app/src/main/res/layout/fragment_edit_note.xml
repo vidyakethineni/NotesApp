@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".EditNoteFragment">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.project6.EditNoteViewModel" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/noteTitleEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Title"
+            android:layout_margin="10dp"
+            android:text="@={viewModel.note.noteName}"/>
+
+        <EditText
+            android:id="@+id/noteDescriptionEditText"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:hint="Description"
+            android:layout_margin="10dp"
+            android:text="@={viewModel.note.noteDescription}"/>
+
+        <Button
+            android:id="@+id/saveNoteButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/square_button_background"
+            android:layout_margin="10dp"
+            android:text="Save"
+            android:onClick="@{() -> viewModel.updateNote()}" />
+
+    </LinearLayout>
+</layout>
+
