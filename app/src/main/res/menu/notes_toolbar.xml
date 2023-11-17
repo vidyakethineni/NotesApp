@@ -14,4 +14,9 @@
         android:clickable="true"
         app:showAsAction="always" />
 
+    <item android:id="@+id/noteItemToolbarDeleteNote"
+        android:title="Notes"
+        android:icon="@drawable/delete_note"
+        app:showAsAction="always"/>
+
 </menu>

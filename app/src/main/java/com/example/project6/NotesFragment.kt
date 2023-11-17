@@ -40,7 +40,7 @@ class NotesFragment : Fragment() {
          */
         fun noteClicked (note : Note) {
             viewModel.onNoteClicked(note)
-            findNavController().navigate(R.id.editNoteFragment)
+//            findNavController().navigate(R.id.editNoteFragment)
 
         }
 
@@ -85,13 +85,12 @@ class NotesFragment : Fragment() {
         })
 
 
-//        viewModel.navigateToSignIn.observe(viewLifecycleOwner, Observer { navigate ->
-//            if(navigate) {
-//                this.findNavController().navigate(R.id.action_notesFragment_to_signInFragment)
-//                viewModel.onNavigatedToSignIn()
-//            }
-//        })
-
+        viewModel.navigateToSignIn.observe(viewLifecycleOwner, Observer { navigate ->
+            if(navigate) {
+                this.findNavController().navigate(R.id.action_notesFragment_to_signInFragment)
+                viewModel.onNavigatedToSignIn()
+            }
+        })
 
         return view
     }
