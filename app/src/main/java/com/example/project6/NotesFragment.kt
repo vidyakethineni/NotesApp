@@ -32,6 +32,7 @@ class NotesFragment : Fragment() {
         _binding = FragmentNotesBinding.inflate(inflater, container, false)
         val view = binding.root
         val viewModel  : NotesViewModel by activityViewModels()
+        viewModel.initializeTheDatabaseReference()
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
@@ -48,7 +49,6 @@ class NotesFragment : Fragment() {
          * Action performed when 'yes' is pressed in the confirmation dialog for a note is being deleted
          */
         fun yesPressed(noteId : String){
-            Log.d(TAG,"in yesPressed(): noteId = $noteId")
             binding.viewModel?.deleteNote(noteId)
         }
 
@@ -59,6 +59,7 @@ class NotesFragment : Fragment() {
             ConfirmDeleteDialogFragment(noteId,::yesPressed).show(childFragmentManager,
                 ConfirmDeleteDialogFragment.TAG)
         }
+
 
         // Creates an adapter with specified click listeners
         val adapter = NoteItemAdapter(::noteClicked,::deleteClicked)
@@ -91,6 +92,7 @@ class NotesFragment : Fragment() {
                 viewModel.onNavigatedToSignIn()
             }
         })
+
 
         return view
     }

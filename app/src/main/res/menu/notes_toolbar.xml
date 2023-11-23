@@ -6,17 +6,20 @@
         android:title="Add Note"
         android:icon="@drawable/add_note"
         android:clickable="true"
-        app:showAsAction="always" />
+        app:showAsAction="always"
+        android:name="com.example.project6.NotesFragment" />
 
     <item android:id="@+id/notesToolbarSignOut"
         android:title="Sign Out"
         android:icon="@drawable/sign_out"
         android:clickable="true"
-        app:showAsAction="always" />
+        app:showAsAction="always"
+        android:name="com.example.project6.NotesFragment" />
 
     <item android:id="@+id/noteItemToolbarDeleteNote"
         android:title="Notes"
         android:icon="@drawable/delete_note"
-        app:showAsAction="always"/>
+        app:showAsAction="always"
+        android:name="com.example.project6.EditNoteFragment" />
 
 </menu>

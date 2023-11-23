@@ -25,6 +25,7 @@ class NoteItemAdapter(val clickListener: (note: Note) -> Unit,
         val item = getItem(position)
         holder.bind(item, clickListener, deleteClickListener)
     }
+
     /**
      * ViewHolder for individual note items in the RecyclerView
      */

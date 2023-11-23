@@ -42,7 +42,8 @@
                 android:layout_height="35dp"
                 android:layout_alignParentEnd="true"
                 android:layout_margin="10dp"
-                app:srcCompat="@android:drawable/ic_delete"/>
+                app:srcCompat="@android:drawable/ic_delete"
+                android:visibility="gone"/>
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
